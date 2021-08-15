@@ -1,0 +1,15 @@
+<li [class.completed]="todoParam.completado" [class.editing]="editando">
+  <div class="view view-flex" >
+    <input class="toggle" type="checkbox" [formControl]="chkCompletadoField" />
+    <label (dblclick)="editar()">{{ todoParam.texto }}
+    </label>
+    <button class="detroy" (click)="borrar()"></button>
+  </div>
+  <input
+    class="edit"
+    type="text"
+    [formControl]="txtInputField"
+    #inputFisico
+    (blur)="(terminarEdicion())"
+  />
+</li>
